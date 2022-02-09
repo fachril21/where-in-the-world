@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "rest-countries",
+    title: "Rest Countries",
     htmlAttrs: {
       lang: "en",
     },
@@ -21,7 +21,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["boxicons/css/boxicons.min.css"],
+  css: ["boxicons/css/boxicons.min.css", "@/assets/style.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["@/plugins/ClickOutside.js"],

@@ -1,53 +1,69 @@
 <template>
   <div class="relative" v-click-outside="onClickOutside">
     <button
-      class="w-64 h-12 rounded-lg shadow-lg overflow-hidden flex justify-between items-center px-4"
+      class="w-64 h-12 bg-white dark:bg-gray-500 rounded-lg shadow-lg overflow-hidden flex justify-between items-center px-4 transition-all ease-in-out duration-300"
       @focus="isFocused = !isFocused"
     >
-      <span class="text-gray-900" v-if="value"> {{ value }} </span>
-      <span class="text-gray-500" v-if="!value"> Filter by Region </span>
+      <span
+        class="text-gray-900 dark:text-white transition-all ease-in-out duration-300"
+        v-if="valueFilter"
+      >
+        {{ valueFilter }}
+      </span>
+      <span
+        class="text-gray-500 dark:text-gray-400 transition-all ease-in-out duration-300"
+        v-if="!valueFilter"
+      >
+        Filter by Region
+      </span>
       <i
-        class="bx bx-chevron-down text-2xl text-gray-500 transform ease-in-out duration-300"
+        class="bx bx-chevron-down text-2xl text-gray-500 dark:text-gray-300 transform ease-in-out duration-300 transition-all ease-in-out duration-300"
         :class="{ 'rotate-180': isFocused }"
       ></i>
     </button>
 
-    <div
-      v-if="isFocused"
-      class="absolute top-0 mt-14 w-64 rounded-lg shadow-lg z-50 bg-white py-2"
-    >
+    <transition name="fade">
       <div
-        v-for="(region, index) in regions"
-        :key="index"
-        class="px-4 py-2 text-gray-900 hover:text-blue-700 transition-all ease-in-out duration-300 cursor-pointer hover:translate-x-2 transform"
-        @click="setRegion(region)"
+        v-if="isFocused"
+        class="absolute top-0 mt-14 w-64 rounded-lg shadow-lg z-10 bg-white dark:bg-gray-500 py-2 transition-all ease-in-out duration-300"
       >
-        {{ region }}
+        <div
+          v-for="(region, index) in regions"
+          :key="index"
+          class="px-4 py-2 text-gray-900 dark:text-white dark:hover:text-blue-300 hover:text-blue-700 transition-all ease-in-out duration-300 cursor-pointer hover:translate-x-2 transform"
+          @click="setRegion(region)"
+        >
+          {{ region }}
+        </div>
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
 <script>
 export default {
   name: "FilterSelect",
+  props: ["value"],
   data() {
     return {
       isFocused: false,
-      value: "",
+      valueFilter: "",
       regions: ["All Region", "Africa", "America", "Asia", "Europe", "Oceania"],
     };
   },
   methods: {
     setRegion(region) {
-      this.value = region;
+      this.valueFilter = region;
+      this.$emit("input", this.valueFilter);
       this.setBlur();
     },
     setBlur() {
       this.isFocused = !this.isFocused;
     },
     onClickOutside() {
-      this.setBlur();
+      if (this.isFocused) {
+        this.setBlur();
+      }
     },
   },
 };
