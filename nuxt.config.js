@@ -24,7 +24,7 @@ export default {
   css: ["boxicons/css/boxicons.min.css", "@/assets/style.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ["@/plugins/ClickOutside.js"],
+  plugins: ["@/plugins/ClickOutside.js", "~/plugins/notification.js"],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -46,4 +46,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  loading: {
+    color: 'blue',
+    height: '5px'
+  }
 };

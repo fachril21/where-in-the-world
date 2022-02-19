@@ -18,7 +18,7 @@
         </div>
         <div>
           <span class="font-bold">Capital: </span>
-          <span v-if="capital">{{ capital }}</span>
+          <span v-if="capital">{{ capital[0] }}</span>
           <span v-if="!capital">-</span>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default {
       required: true,
     },
     capital: {
-      type: String,
+      type: Array,
       required: false,
     },
   },
