@@ -1,6 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  tarhet: 'static',
+  target: 'static',
   head: {
     title: "Rest Countries",
     htmlAttrs: {
