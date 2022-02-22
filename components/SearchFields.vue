@@ -1,7 +1,7 @@
 <template>
   <div
     class="h-12 rounded-lg bg-white dark:bg-gray-500 shadow-lg flex flex-row items-center px-4 gap-2 cursor-pointer transition-all ease-in-out duration-300"
-    :style="{ width: '400px' }"
+    :style="{ width: '100%' }"
   >
     <i
       class="bx bx-search-alt text-lg text-gray-500 dark:text-white transition-all ease-in-out duration-300"

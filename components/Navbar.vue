@@ -3,7 +3,7 @@
     class="h-16 w-full bg-white dark:bg-gray-600 shadow-lg fixed top-0 left-0 z-50"
   >
     <div
-      class="container mx-auto sm:container sm:mx-auto w-full h-full flex flex-row items-center justify-between px-4 sm:px-0"
+      class="container mx-auto sm:container sm:mx-auto w-full h-full flex flex-row items-center justify-between px-4"
     >
       <nuxt-link to="/">
         <span

@@ -1,7 +1,7 @@
 <template>
   <div class="relative" v-click-outside="onClickOutside">
     <button
-      class="w-64 h-12 bg-white dark:bg-gray-500 rounded-lg shadow-lg overflow-hidden flex justify-between items-center px-4 transition-all ease-in-out duration-300"
+      class="w-full h-12 bg-white dark:bg-gray-500 rounded-lg shadow-lg overflow-hidden flex justify-between items-center px-4 transition-all ease-in-out duration-300"
       @focus="isFocused = !isFocused"
     >
       <span

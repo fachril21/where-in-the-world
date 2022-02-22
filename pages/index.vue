@@ -1,14 +1,17 @@
 <template>
   <div>
-    <notification type="danger" message="Test notification!!!!" />
-    <div class="container sm:container mx-auto sm:mx-auto pb-8">
-      <div id="search-filter" class="py-8 flex flex-row justify-between">
-        <form @submit.prevent="onSubmit">
+    <notification />
+    <div class="container sm:container mx-auto sm:mx-auto pb-8 px-4">
+      <div id="search-filter" class="py-8 flex flex-wrap gap-4 justify-between">
+        <form @submit.prevent="onSubmit" class="w-full sm:w-64">
           <search-fields v-model="search" />
         </form>
-        <filter-select v-model="filter" />
+        <filter-select class="w-full sm:w-64" v-model="filter" />
       </div>
-      <div class="grid grid-cols-4 gap-12" v-if="Array.isArray(data)">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12"
+        v-if="Array.isArray(data)"
+      >
         <div v-for="(item, index) in data" :key="index">
           <countries-card
             :flag="item.flags.png"

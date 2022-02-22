@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="container sm:container mx-auto sm:mx-auto py-8 flex flex-col gap-16 px-4 sm:px-0"
+      class="container sm:container mx-auto sm:mx-auto py-8 flex flex-col gap-16 px-4"
     >
       <div>
         <button
@@ -12,10 +12,10 @@
           <span> Back </span>
         </button>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-24">
+      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
         <div class="w-full flex justify-center">
           <img
-            class="w-full h-auto rounded-lg shadow-xl"
+            class="w-full md:h-1/2 lg:h-auto rounded-lg shadow-xl"
             :src="data.flags.png"
             :alt="data.flags.png"
           />
@@ -24,7 +24,7 @@
           <div id="name">
             <span class="text-4xl font-bold">{{ data.name }}</span>
           </div>
-          <div id="detail" class="flex flex-row gap-8">
+          <div id="detail" class="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-8">
             <div class="flex flex-col gap-2">
               <div>
                 <span class="font-bold">Native Name: </span>
